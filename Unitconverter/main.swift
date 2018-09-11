@@ -8,28 +8,28 @@
 
 import Foundation
 
+let convertValue : Float = 100
+
+func convertUnit (originNumber : String){
+    var arr = originNumber.components(separatedBy: " ")
+    var convertNumber : Float = 0
+    
+    if arr[1] == "cm"{
+        convertNumber = Float(arr[0])! / convertValue
+        print("\(convertNumber)m")
+    }
+    else if arr[1] == "m"{
+        convertNumber = Float(arr[0])! * convertValue
+        print("\(convertNumber)cm")
+    }
+    
+}
+
 var number : String = "120 cm"
-var arr = number.components(separatedBy: " ")
+var number1 : String = "1.8 m"
 
-if arr[1] == "cm"{
-    print("\(Float(arr[0])! / 100)m")
-}
-else if arr[1] == "m"{
-    print("\(Float(arr[0])! * 100)cm")
-}
-
-
-var number1 : String = "1.86 m"
-var arr1 = number1.components(separatedBy: " ")
-
-if arr1[1] == "cm"{
-    print("\(Float(arr1[0])! / 100)m")
-}
-else if arr1[1] == "m"{
-    print("\(Float(arr1[0])! * 100)cm")
-}
-
-
+convertUnit(originNumber: number)
+convertUnit(originNumber: number1)
 
 
 
